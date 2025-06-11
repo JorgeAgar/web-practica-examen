@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,16 @@ public class SesionService {
 	
 	public List<Sesion> getAllSesiones() {
 		return sesionRepository.findAll();
+	}
+	
+	public List<Sesion> getProgramacionSesiones(int programacionId) {
+		List<Sesion> sesiones = getAllSesiones();
+		List<Sesion> sesionesProg = new LinkedList<Sesion>();
+		for(Sesion s : sesiones) {
+			if(s.getProgramacion().getId() == programacionId)
+				sesionesProg.add(s);
+		}
+		return sesionesProg;
 	}
 	
 	public Sesion getSesionById(Integer id) {
