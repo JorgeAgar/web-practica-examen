@@ -10,7 +10,7 @@ import com.example.demo.entities.TipoDocumento;
 import com.example.demo.services.TipoDocumentoService;
 
 @RestController
-@RequestMapping("/api/tipos-documento")
+@RequestMapping("/api/tipo-documentos")
 public class TipoDocumentoController {
 
 	@Autowired
