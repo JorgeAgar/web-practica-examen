@@ -10,7 +10,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class InscripcionDto {
-    private Integer id;
     private Integer participanteId;
     private Integer programaciónId;
     private LocalDate fecha;

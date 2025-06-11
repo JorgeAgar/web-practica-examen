@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ParticipanteDto {
-    private Integer id;
     private String nombre;
     private Integer colegioId;
     private Integer tipoDocumentoId;

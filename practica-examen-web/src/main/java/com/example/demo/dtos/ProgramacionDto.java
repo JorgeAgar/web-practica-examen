@@ -10,7 +10,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProgramacionDto {
-    private Integer id;
     private Integer colegioId;
     private Integer tallerId;
     private LocalDate fechaInicio;

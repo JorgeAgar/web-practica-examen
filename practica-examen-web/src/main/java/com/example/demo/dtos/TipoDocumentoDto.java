@@ -8,6 +8,5 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TipoDocumentoDto {
-    private Integer id;
     private String descripción;
 }

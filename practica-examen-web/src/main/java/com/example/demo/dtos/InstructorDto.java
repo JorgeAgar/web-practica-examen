@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class InstructorDto {
-    private Integer id;
     private String nombre;
     private String documento;
 }

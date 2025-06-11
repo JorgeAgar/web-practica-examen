@@ -11,7 +11,6 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SesionDto {
-    private Integer id;
     private LocalDate fecha;
     private LocalTime hora;
     private Integer programacionId;

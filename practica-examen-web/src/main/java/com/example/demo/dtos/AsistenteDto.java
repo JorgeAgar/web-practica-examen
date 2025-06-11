@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AsistenteDto {
-    private Integer id;
     private Integer sesionId;
     private Integer participanteId;
 }

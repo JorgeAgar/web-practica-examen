@@ -10,7 +10,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EvidenciaDto {
-    private Integer id;
     private Integer sesionId;
     private String observación;
     private LocalDate fecha;
