@@ -1,9 +1,14 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,4 +23,12 @@ public class Ubicacion {
     private Integer id;
 
     private String nombre;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "ubicacion")
+    private List<Programacion> programaciones;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "ubicacion")
+    private List<Sesion> sesiones;
 }

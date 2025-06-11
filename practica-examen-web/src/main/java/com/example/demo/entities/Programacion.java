@@ -1,6 +1,9 @@
 package com.example.demo.entities;
 
 import java.time.LocalDate;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -48,4 +52,12 @@ public class Programacion {
     @ManyToOne
     @JoinColumn(name = "ubicacion_id")
     private Ubicacion ubicacion;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "programacion")
+    private List<Inscripcion> inscripciones;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "programacion")
+    private List<Sesion> sesiones;
 }
