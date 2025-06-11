@@ -21,7 +21,6 @@ import lombok.NoArgsConstructor;
 public class Municipio {
 	
 	public Municipio(MunicipioDto dto) {
-        this.id = dto.getId();
         this.nombre = dto.getNombre();
         this.dane = dto.getDane();
     }

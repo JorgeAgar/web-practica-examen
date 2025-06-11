@@ -21,7 +21,6 @@ import lombok.NoArgsConstructor;
 public class Ubicacion {
 	
 	public Ubicacion(UbicacionDto dto) {
-        this.id = dto.getId();
         this.nombre = dto.getNombre();
     }
 	

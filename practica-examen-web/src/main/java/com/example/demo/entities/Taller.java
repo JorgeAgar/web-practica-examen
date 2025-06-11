@@ -22,7 +22,6 @@ import lombok.NoArgsConstructor;
 public class Taller {
 	
 	public Taller(TallerDto dto) {
-        this.id = dto.getId();
         this.nombre = dto.getNombre();
         this.descripción = dto.getDescripción();
     }

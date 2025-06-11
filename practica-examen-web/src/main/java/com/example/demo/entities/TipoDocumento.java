@@ -23,7 +23,6 @@ import lombok.NoArgsConstructor;
 public class TipoDocumento {
 	
 	public TipoDocumento(TipoDocumentoDto dto) {
-        this.id = dto.getId();
         this.descripción = dto.getDescripción();
     }
 	
