@@ -6,16 +6,27 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dtos.SesionDto;
+import com.example.demo.entities.Instructor;
+import com.example.demo.entities.Programacion;
 import com.example.demo.entities.Sesion;
+import com.example.demo.entities.Ubicacion;
 import com.example.demo.repositories.SesionRepository;
-
-import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class SesionService {
 
 	@Autowired
 	private SesionRepository sesionRepository;
+	
+	@Autowired
+	private InstructorService instructorService;
+	
+	@Autowired
+	private ProgramacionService programacionService;
+	
+	@Autowired
+	private UbicacionService ubicacionService;
 	
 	public List<Sesion> getAllSesiones() {
 		return sesionRepository.findAll();
@@ -35,18 +46,16 @@ public class SesionService {
 		return sesionRepository.getReferenceById(id);
 	}
 	
-	public void addSesion(Sesion newSesion) {
+	public void addSesion(SesionDto sesionDto) {
+		Sesion newSesion = new Sesion();
+		newSesion.setFecha(sesionDto.getFecha());
+		newSesion.setHora(sesionDto.getHora());
+		Instructor instructor = instructorService.getInstructorById(sesionDto.getInstructorId());
+		newSesion.setInstructor(instructor);
+		Programacion programacion = programacionService.getProgramacionById(sesionDto.getProgramacionId());
+		newSesion.setProgramacion(programacion);
+		Ubicacion ubicacion = ubicacionService.getUbicacionById(sesionDto.getUbicacionId());
+		newSesion.setUbicacion(ubicacion);
 		sesionRepository.save(newSesion);
-	}
-	
-	public void updateSesion(Integer id, Sesion sesion) {
-		if(!sesionRepository.existsById(id))
-			throw new EntityNotFoundException("Sesión no encontrada con id: " + id);
-		sesion.setId(id);
-		sesionRepository.save(sesion);
-	}
-	
-	public void deleteSesion(Integer id) {
-		sesionRepository.deleteById(id);
 	}
 }
