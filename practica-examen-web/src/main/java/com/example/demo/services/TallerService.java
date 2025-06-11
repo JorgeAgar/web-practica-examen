@@ -20,6 +20,10 @@ public class TallerService {
 		return tallerRepository.findAll();
 	}
 	
+	public Taller getTallerById(Integer id) {
+		return tallerRepository.getReferenceById(id);
+	}
+	
 	public void addTaller(Taller newTaller) {
 		tallerRepository.save(newTaller);
 	}

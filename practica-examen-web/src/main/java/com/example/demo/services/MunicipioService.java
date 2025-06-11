@@ -20,6 +20,10 @@ public class MunicipioService {
 		return municipioRepository.findAll();
 	}
 	
+	public Municipio getMunicipioById(Integer id) {
+		return municipioRepository.getReferenceById(id);
+	}
+	
 	public void addMunicipio(Municipio newMunicipio) {
 		municipioRepository.save(newMunicipio);
 	}

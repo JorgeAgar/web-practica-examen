@@ -20,6 +20,10 @@ public class TipoDocumentoService {
 		return tipoDocumentoRepository.findAll();
 	}
 	
+	public TipoDocumento getTipoDocumentoById(Integer id) {
+		return tipoDocumentoRepository.getReferenceById(id);
+	}
+	
 	public void addTipoDocumento(TipoDocumento newTipoDocumento) {
 		tipoDocumentoRepository.save(newTipoDocumento);
 	}

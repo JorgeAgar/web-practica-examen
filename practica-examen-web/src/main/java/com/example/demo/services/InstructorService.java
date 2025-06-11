@@ -20,6 +20,10 @@ public class InstructorService {
 		return instructorRepository.findAll();
 	}
 	
+	public Instructor getInstructorById(Integer id) {
+		return instructorRepository.getReferenceById(id);
+	}
+	
 	public void addInstructor(Instructor newInstructor) {
 		instructorRepository.save(newInstructor);
 	}

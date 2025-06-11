@@ -20,6 +20,10 @@ public class UbicacionService {
 		return ubicacionRepository.findAll();
 	}
 	
+	public Ubicacion getUbicacionById(Integer id) {
+		return ubicacionRepository.getReferenceById(id);
+	}
+	
 	public void addUbicacion(Ubicacion newUbicacion) {
 		ubicacionRepository.save(newUbicacion);
 	}
