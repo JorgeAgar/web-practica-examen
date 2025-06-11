@@ -2,6 +2,7 @@ package com.example.demo.entities;
 
 import java.util.List;
 
+import com.example.demo.dtos.UbicacionDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
@@ -18,6 +19,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Ubicacion {
+	
+	public Ubicacion(UbicacionDto dto) {
+        this.id = dto.getId();
+        this.nombre = dto.getNombre();
+    }
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

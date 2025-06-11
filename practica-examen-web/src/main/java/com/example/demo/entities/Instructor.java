@@ -2,6 +2,7 @@ package com.example.demo.entities;
 
 import java.util.List;
 
+import com.example.demo.dtos.InstructorDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
@@ -18,7 +19,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Instructor {
-    @Id
+    
+	public Instructor(InstructorDto dto) {
+        this.id = dto.getId();
+        this.nombre = dto.getNombre();
+        this.documento = dto.getDocumento();
+    }
+	
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

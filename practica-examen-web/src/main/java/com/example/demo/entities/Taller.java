@@ -2,6 +2,7 @@ package com.example.demo.entities;
 
 import java.util.List;
 
+import com.example.demo.dtos.TallerDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -19,6 +20,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Taller {
+	
+	public Taller(TallerDto dto) {
+        this.id = dto.getId();
+        this.nombre = dto.getNombre();
+        this.descripción = dto.getDescripción();
+    }
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
